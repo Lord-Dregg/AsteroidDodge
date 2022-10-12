@@ -1,0 +1,89 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Artworks/explosion/boom06.png" type="Texture" id=1]
+[ext_resource path="res://Artworks/explosion/boom11.png" type="Texture" id=2]
+[ext_resource path="res://Artworks/explosion/boom07.png" type="Texture" id=3]
+[ext_resource path="res://Artworks/explosion/boom09.png" type="Texture" id=4]
+[ext_resource path="res://Artworks/explosion/boom10.png" type="Texture" id=5]
+[ext_resource path="res://Artworks/explosion/boom08.png" type="Texture" id=6]
+[ext_resource path="res://Artworks/explosion/boom05.png" type="Texture" id=7]
+[ext_resource path="res://Artworks/explosion/boom01.png" type="Texture" id=8]
+[ext_resource path="res://Artworks/explosion/boom02.png" type="Texture" id=9]
+[ext_resource path="res://Artworks/explosion/boom03.png" type="Texture" id=10]
+[ext_resource path="res://Artworks/explosion/boom04.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[node name="Explosion" type="AnimatedSprite"]
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+playback_speed = 3.0
+anims/RESET = SubResource( 2 )
+anims/default = SubResource( 3 )

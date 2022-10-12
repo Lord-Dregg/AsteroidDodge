@@ -1,0 +1,514 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/COMICZ.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Artworks/05.png" type="Texture" id=3]
+[ext_resource path="res://Artworks/Player.png" type="Texture" id=4]
+[ext_resource path="res://Artworks/asteroidR4.png" type="Texture" id=5]
+[ext_resource path="res://Artworks/meteorBrown_big1.png" type="Texture" id=6]
+[ext_resource path="res://Artworks/08.png" type="Texture" id=7]
+[ext_resource path="res://Artworks/meteorBrown_small1.png" type="Texture" id=8]
+[ext_resource path="res://Artworks/06.png" type="Texture" id=9]
+[ext_resource path="res://Artworks/laserRed01.png" type="Texture" id=10]
+[ext_resource path="res://Artworks/laserBlue01.png" type="Texture" id=11]
+[ext_resource path="res://Artworks/fire16.png" type="Texture" id=12]
+[ext_resource path="res://Artworks/StarSky02.png" type="Texture" id=13]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleLabel:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SubLabel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 262, 156 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SubLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Button:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Button:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HighScore:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("PreviousScore:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "sublabel"
+length = 3.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("SubLabel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.45, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 262, 156 ), Vector2( 262, 212 ), Vector2( 262, 212 ), Vector2( 262, 195 ), Vector2( 262, 211 ), Vector2( 262, 201 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SubLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Button:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 0.5 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Button:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("HighScore:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2, 2.65 ),
+"transitions": PoolRealArray( 2, 0.5 ),
+"update": 3,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("PreviousScore:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 2.5, 3 ),
+"transitions": PoolRealArray( 2, 0.5 ),
+"update": 3,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("TitleLabel:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "title_intro"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleLabel:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, -2 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "startSubLabelAnim"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SubLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Button:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+outline_size = 1
+outline_color = Color( 0.921569, 0.94902, 0.0705882, 1 )
+extra_spacing_bottom = -4
+extra_spacing_char = -1
+extra_spacing_space = -1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 43
+outline_size = 1
+outline_color = Color( 0.921569, 0.94902, 0.0705882, 1 )
+extra_spacing_bottom = -4
+extra_spacing_char = -3
+extra_spacing_space = 7
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 29
+outline_size = 1
+outline_color = Color( 0.921569, 0.94902, 0.0705882, 1 )
+extra_spacing_bottom = -4
+extra_spacing_char = -3
+extra_spacing_space = 7
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="StarSky02" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 13 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 100, 0, 1024, 600 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="MeteorBrownBig1" type="Sprite" parent="StarSky02"]
+position = Vector2( 187, 14 )
+rotation = -0.492182
+scale = Vector2( 1.36, 1.36 )
+texture = ExtResource( 6 )
+
+[node name="AsteroidR4" type="Sprite" parent="StarSky02"]
+position = Vector2( 990, 189 )
+rotation = 0.598393
+scale = Vector2( 0.76, 0.76 )
+texture = ExtResource( 5 )
+
+[node name="08" type="Sprite" parent="StarSky02"]
+position = Vector2( 355, 403 )
+rotation = 2.0461
+scale = Vector2( 0.76, 0.76 )
+texture = ExtResource( 7 )
+
+[node name="09" type="Sprite" parent="StarSky02"]
+position = Vector2( 878, 86 )
+rotation = -1.1157
+scale = Vector2( 0.76, 0.76 )
+texture = ExtResource( 7 )
+
+[node name="05" type="Sprite" parent="StarSky02"]
+position = Vector2( 81, 433 )
+rotation = -0.365716
+scale = Vector2( 2.22126, 1.23892 )
+texture = ExtResource( 3 )
+
+[node name="MeteorBrownSmall1" type="Sprite" parent="StarSky02"]
+position = Vector2( 377, 94 )
+rotation = 0.598393
+scale = Vector2( 0.76, 0.76 )
+texture = ExtResource( 8 )
+
+[node name="LaserRed01" type="Sprite" parent="StarSky02"]
+position = Vector2( 193, 370 )
+rotation = 0.678591
+scale = Vector2( 1.21896, 0.788061 )
+texture = ExtResource( 10 )
+
+[node name="LaserRed02" type="Sprite" parent="StarSky02"]
+position = Vector2( 274, 275 )
+rotation = 0.678591
+scale = Vector2( 1.21896, 0.788061 )
+texture = ExtResource( 10 )
+
+[node name="LaserRed03" type="Sprite" parent="StarSky02"]
+position = Vector2( 379, 152 )
+rotation = 0.678591
+scale = Vector2( 1.21896, 0.788061 )
+texture = ExtResource( 10 )
+
+[node name="AsteroidR5" type="Sprite" parent="StarSky02"]
+position = Vector2( 493, -14 )
+rotation = 0.903346
+texture = ExtResource( 5 )
+
+[node name="Fire16" type="Sprite" parent="StarSky02"]
+modulate = Color( 1, 0.984314, 0.0156863, 1 )
+position = Vector2( 122, 467 )
+rotation = 0.694994
+texture = ExtResource( 12 )
+
+[node name="Fire17" type="Sprite" parent="StarSky02"]
+modulate = Color( 0.992157, 1, 0.0588235, 1 )
+position = Vector2( 690, 572 )
+rotation = -0.0484446
+texture = ExtResource( 12 )
+
+[node name="Player" type="Sprite" parent="StarSky02"]
+modulate = Color( 0, 0.0823529, 0.960784, 1 )
+position = Vector2( 689, 518 )
+rotation = -0.0086481
+texture = ExtResource( 4 )
+
+[node name="Player2" type="Sprite" parent="StarSky02"]
+position = Vector2( 149, 431 )
+rotation = 0.618042
+scale = Vector2( 0.795732, 0.795732 )
+texture = ExtResource( 4 )
+
+[node name="LaserBlue01" type="Sprite" parent="StarSky02"]
+position = Vector2( 688, 439 )
+rotation = -0.0086481
+texture = ExtResource( 11 )
+
+[node name="LaserBlue02" type="Sprite" parent="StarSky02"]
+position = Vector2( 688, 365 )
+rotation = -0.00699108
+texture = ExtResource( 11 )
+
+[node name="LaserBlue03" type="Sprite" parent="StarSky02"]
+position = Vector2( 683, 291 )
+rotation = -0.0773702
+texture = ExtResource( 11 )
+
+[node name="LaserBlue04" type="Sprite" parent="StarSky02"]
+position = Vector2( 694, 224 )
+rotation = 0.0218341
+texture = ExtResource( 11 )
+
+[node name="LaserBlue05" type="Sprite" parent="StarSky02"]
+position = Vector2( 684, 156 )
+rotation = -0.0719359
+texture = ExtResource( 11 )
+
+[node name="06" type="Sprite" parent="StarSky02"]
+position = Vector2( 656, 55 )
+rotation = -0.553281
+scale = Vector2( 1.23999, 1.60032 )
+texture = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+playback_speed = 0.75
+method_call_mode = 1
+anims/RESET = SubResource( 3 )
+anims/sublabel = SubResource( 4 )
+anims/title_intro = SubResource( 5 )
+
+[node name="SubLabel" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -250.0
+margin_top = 156.0
+margin_right = 250.0
+margin_bottom = 267.0
+rect_min_size = Vector2( 500, 100 )
+custom_colors/font_color = Color( 0.917647, 0.74902, 0.164706, 1 )
+custom_colors/font_outline_modulate = Color( 0.515625, 0.414017, 0.0619354, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = -5
+custom_constants/line_spacing = -47
+custom_constants/shadow_offset_y = 4
+custom_fonts/font = SubResource( 2 )
+text = "...developed by #Boldminds_IT_Crew#"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TitleLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -250.0
+margin_top = 96.0
+margin_right = 250.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 500, 100 )
+custom_colors/font_color = Color( 0.917647, 0.74902, 0.164706, 1 )
+custom_colors/font_outline_modulate = Color( 0.515625, 0.414017, 0.0619354, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = -9
+custom_constants/line_spacing = -43
+custom_constants/shadow_offset_y = 6
+custom_fonts/font = SubResource( 1 )
+text = "ASTEROID
+   DODGE"
+align = 1
+valign = 1
+percent_visible = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -30.0
+margin_right = 100.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 200, 60 )
+text = "START GAME"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HighScore" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -146.0
+margin_top = -185.0
+margin_right = 82.0
+margin_bottom = -128.0
+custom_fonts/font = SubResource( 1 )
+text = "High Score:"
+
+[node name="PreviousScore" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -105.0
+margin_top = -129.0
+margin_right = 123.0
+margin_bottom = -72.0
+custom_fonts/font = SubResource( 6 )
+text = "Previous Score:"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

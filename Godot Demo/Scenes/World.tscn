@@ -1,0 +1,440 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/COMICZ.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Artworks/StarSky01.png" type="Texture" id=4]
+[ext_resource path="res://Artworks/StarSky05.png" type="Texture" id=7]
+[ext_resource path="res://Artworks/StarSky06.png" type="Texture" id=8]
+[ext_resource path="res://Artworks/StarSky03.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control/Buttons:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 437, 610 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/Control/Buttons:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/Control/Buttons/RetryButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/Control/Buttons/MainMenuButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "game_over"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control/Buttons:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 437, 610 ), Vector2( 437, 260 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/Control/Buttons:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/Control/Buttons/RetryButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/Control/Buttons/MainMenuButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 61, 694 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 61, 1099 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/bg1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1024, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/bg2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/bg3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1024, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/bg4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2048, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "bg_scroll"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/bg1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 2.3, 4.3, 6, 8 ),
+"transitions": PoolRealArray( 1, 1, 0, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -2048, 0 ), Vector2( -2348, 0 ), Vector2( 3789, 32 ), Vector2( 2048, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/bg2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 4, 4.3, 6.3, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 0, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2048, 0 ), Vector2( 0, 0 ), Vector2( -2048, 0 ), Vector2( -2348, 0 ), Vector2( 3789, 0 ), Vector2( 2048, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/bg3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 4, 6, 6.3, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 0, 1 ),
+"update": 0,
+"values": [ Vector2( 4096, 0 ), Vector2( 2048, 0 ), Vector2( 0, 0 ), Vector2( -2048, 0 ), Vector2( -2348, 0 ), Vector2( 4096, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/bg4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 4, 6, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6144, 0 ), Vector2( 4096, 0 ), Vector2( 2048, 0 ), Vector2( 0, 0 ), Vector2( -2048, 0 ) ]
+}
+
+[node name="World" type="Node2D"]
+script = ExtResource( 2 )
+LEVEL_LABEL = NodePath("CanvasLayer/Control/Labels/LevelLabel")
+TIME_LABEL = NodePath("CanvasLayer/Control/Labels/TimeLabel")
+HEALTH_LABEL = NodePath("CanvasLayer/Control/Labels/HealthLabel")
+SCORE_LABEL = NodePath("CanvasLayer/Control/Labels/ScoreLabel")
+PLAYER = NodePath("Node2D/Player")
+SPAWNPOINTS = [ NodePath("SpawnPoint"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3"), NodePath("SpawnPoint4"), NodePath("SpawnPoint5") ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="bg1" type="Sprite" parent="CanvasLayer"]
+position = Vector2( -1024, 0 )
+texture = ExtResource( 4 )
+centered = false
+region_rect = Rect2( 0, 0, 1024, 600 )
+
+[node name="bg2" type="Sprite" parent="CanvasLayer"]
+texture = ExtResource( 8 )
+centered = false
+region_rect = Rect2( 0, 0, 1024, 600 )
+
+[node name="bg3" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 1024, 0 )
+texture = ExtResource( 9 )
+centered = false
+region_rect = Rect2( 0, 0, 1024, 600 )
+
+[node name="bg4" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 2048, 0 )
+texture = ExtResource( 7 )
+centered = false
+region_rect = Rect2( 0, 0, 1024, 600 )
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Labels" type="HBoxContainer" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer/Control/Labels"]
+margin_right = 253.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "Level: "
+align = 1
+valign = 1
+uppercase = true
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer/Control/Labels"]
+margin_left = 257.0
+margin_right = 510.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "Time: "
+align = 1
+valign = 1
+uppercase = true
+
+[node name="HealthLabel" type="Label" parent="CanvasLayer/Control/Labels"]
+margin_left = 514.0
+margin_right = 767.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "Health: "
+align = 1
+valign = 1
+uppercase = true
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Control/Labels"]
+margin_left = 771.0
+margin_right = 1024.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "Score:"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer/Control"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 437.0
+margin_top = 610.0
+margin_right = 587.0
+margin_bottom = 690.0
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="CanvasLayer/Control/Buttons"]
+pause_mode = 2
+margin_top = 8.0
+margin_right = 150.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 80, 30 )
+mouse_default_cursor_shape = 2
+disabled = true
+text = "RETRY"
+
+[node name="MainMenuButton" type="Button" parent="CanvasLayer/Control/Buttons"]
+pause_mode = 2
+margin_top = 42.0
+margin_right = 150.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 80, 30 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+disabled = true
+text = "MAIN MENU"
+
+[node name="SpawnPoint" type="Position2D" parent="."]
+position = Vector2( 3455, 711 )
+
+[node name="SpawnPoint2" type="Position2D" parent="."]
+position = Vector2( 3222, 174 )
+
+[node name="SpawnPoint3" type="Position2D" parent="."]
+position = Vector2( 3182, 1463 )
+
+[node name="SpawnPoint4" type="Position2D" parent="."]
+position = Vector2( 3144, 500 )
+
+[node name="SpawnPoint5" type="Position2D" parent="."]
+position = Vector2( 3429, 1115 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+anims/RESET = SubResource( 2 )
+anims/game_over = SubResource( 3 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 77, 295 )
+
+[node name="Player" parent="Node2D" instance=ExtResource( 1 )]
+position = Vector2( 5, -82 )
+max_speed = 600.0
+MAX_HEALTH = 10.0
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+position = Vector2( 434, 0 )
+current = true
+zoom = Vector2( 2, 2 )
+limit_left = 0
+limit_top = 0
+limit_bottom = 1024
+
+[node name="InvisibleWall" type="StaticBody2D" parent="Node2D"]
+position = Vector2( -24, 720 )
+collision_layer = 8
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/InvisibleWall"]
+position = Vector2( -109, -447 )
+shape = SubResource( 7 )
+
+[node name="InvisibleWall2" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 2131, 282 )
+collision_layer = 8
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/InvisibleWall2"]
+position = Vector2( -109, 0 )
+shape = SubResource( 7 )
+
+[node name="InvisibleWall3" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1531, 1063 )
+rotation = 1.5708
+collision_layer = 8
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/InvisibleWall3"]
+position = Vector2( -109, 595 )
+shape = SubResource( 8 )
+
+[node name="InvisibleWall4" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1052, -241 )
+rotation = 1.5708
+collision_layer = 8
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/InvisibleWall4"]
+position = Vector2( -109, 116 )
+shape = SubResource( 8 )
+
+[node name="BGAnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "bg_scroll"
+playback_speed = 0.3
+anims/RESET = SubResource( 5 )
+anims/bg_scroll = SubResource( 6 )
+
+[connection signal="pressed" from="CanvasLayer/Control/Buttons/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Buttons/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
